@@ -7,7 +7,7 @@ Remoção de importações não utilizadas
 */
 import './App.css';
 import {Cabecalho, Conteudo, Rodape} from './components'; // Redução do caminho do import
-
+import {Inicial} from './pages'; // Importação do componente Inicial
 
 const App = () => {
 
@@ -20,9 +20,7 @@ const App = () => {
 
       {/* Por meio da propriedade "children" o componente Conteudo pode receber outros elementos JSX */}
       <Conteudo>
-        <p>Esse é o meu primeiro projeto com React!</p>
-        <p>Estou adorando aprender React!</p>
-        <p>Estou adorando aprender React!</p>
+        <Inicial/>
       </Conteudo>
       <Rodape usuario="Angelo"/>
     </>
