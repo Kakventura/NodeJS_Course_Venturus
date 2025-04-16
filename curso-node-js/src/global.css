@@ -1,0 +1,29 @@
+/* Remoção de todo o conteúdo do arquivo CSS para estilização própria */
+/* Renomeação do arquivo "index.css" para "global.css -> além da modificação no main.jsx */
+
+
+/* Variáveis de cor que usaremos durante o projeto */
+:root{
+    --cinza: #EBEBEC;
+    --preto: #272727;
+    --rosa: #F06197;
+    --verde: #36b59f;
+
+}
+
+/* Resete da margem padrão do arquivo */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--cinza);
+}
+
+body, input, textarea, button{
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: var(--preto);
+}
