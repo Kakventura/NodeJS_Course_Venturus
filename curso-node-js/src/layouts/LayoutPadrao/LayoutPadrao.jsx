@@ -1,8 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { Cabecalho, Conteudo, Rodape } from "../../components";
+import { useContext } from "react";
+import { AppContext } from "../../context";
+import { useAppContext } from "../../hooks";
 
 
 const LayoutPadrao = () => {
+    const { criador } = useAppContext();
     return (
         <>
             <Cabecalho nomeUsuario="Karinne"/> 
@@ -12,7 +16,7 @@ const LayoutPadrao = () => {
                 {/* Serve para mostrar o conteúdo da rota escolhida */}
                 <Outlet/>
             </Conteudo>
-            <Rodape usuario="Angelo"/> 
+            <Rodape criador={criador}/> 
         </>
     );
 };

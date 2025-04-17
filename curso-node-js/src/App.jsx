@@ -7,23 +7,20 @@ Remoção de importações não utilizadas
 */
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import {Cabecalho, Conteudo, Rodape} from './components'; // Redução do caminho do import
-import { Inicio } from './pages';
 import { Router } from './Router';
+import { AppContextProvider } from './context';
 
 const App = () => {
 
   return (
-  
-    //Alteração - 2° Modulo - Uso de componentes
-    //Devemos agrupar os elementos por meio de um termo chamado "fragmento (fragment)"
-    <BrowserRouter>
-      <Router/>
-      
-    </BrowserRouter>
-
+    <AppContextProvider>
+      <BrowserRouter>
+        <Router/>
+      </BrowserRouter>
+    </AppContextProvider>
   );
 };
 
 // Adição de ponto e vírgula no final da linha
-export {App};
+export { App };
+

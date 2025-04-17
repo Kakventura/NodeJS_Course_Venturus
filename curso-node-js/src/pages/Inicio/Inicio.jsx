@@ -1,11 +1,13 @@
+
 import { Formulario, ListaTarefas } from '../../components';
 import style from './Inicio.module.css';
 
-const Inicio = () => {
+
+const Inicio = () => {  
     return (
         <div className={style.Inicio}>
-            <Formulario />
-            <ListaTarefas />
+            <Formulario/>
+            <ListaTarefas/>
         </div>
        
     )
