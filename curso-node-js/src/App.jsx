@@ -5,9 +5,11 @@ Remoção de importações não utilizadas
   import reactLogo from './assets/react.svg'
   import viteLogo from '/vite.svg'
 */
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import {Cabecalho, Conteudo, Rodape} from './components'; // Redução do caminho do import
 import { Inicio } from './pages';
+import { Router } from './Router';
 
 const App = () => {
 
@@ -15,19 +17,12 @@ const App = () => {
   
     //Alteração - 2° Modulo - Uso de componentes
     //Devemos agrupar os elementos por meio de um termo chamado "fragmento (fragment)"
-    <>
-      <Cabecalho nomeUsuario="Karinne"/>
+    <BrowserRouter>
+      <Router/>
+      
+    </BrowserRouter>
 
-      {/* Por meio da propriedade "children" o componente Conteudo pode receber outros elementos JSX */}
-      <Conteudo>
-        <Inicio/>
-      </Conteudo>
-      <Rodape usuario="Angelo"/>
-    </>
-  )
-
-
-  
+  );
 };
 
 // Adição de ponto e vírgula no final da linha

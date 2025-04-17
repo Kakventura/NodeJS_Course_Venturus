@@ -1,4 +1,5 @@
 // Importando do css do componente
+import { Link } from 'react-router-dom';
 import style from './Cabecalho.module.css';
 
 // 'props" é abreviação de propriedades e é utilizada essa linguagem no react
@@ -9,6 +10,12 @@ const Cabecalho = (/*props*/) => {
     //const {nomeUsuario} = props; // Desestruturação de objetos
     return (
         <div className={style.Cabecalho}>
+            <Link to="/">
+                <h1>
+                    <span>ToDo </span> 
+                    List
+                </h1>
+            </Link>
             {/*
             }
                 Bem vindo ao meu site!
@@ -17,10 +24,8 @@ const Cabecalho = (/*props*/) => {
             {/* Comentário em JSX */}
             {/* props irá receber o nome do usuário a ser recebido */}
             {/* retirada do objeto props. e apenas o nome da variável */}
-            <h1>
-                <span>ToDo </span> 
-                List
-            </h1>
+            
+            <Link to="/sobre-nos">Sobre Nós</Link>
         </div>
     )
 };
