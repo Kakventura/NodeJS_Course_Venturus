@@ -7,4 +7,5 @@ export * from './CampoTexto';
 export * from './Conteudo';
 export * from './Formulario';
 export * from './Rodape';
+export * from './ListaTarefas';
 
