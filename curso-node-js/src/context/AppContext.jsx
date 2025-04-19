@@ -6,7 +6,7 @@ export const AppContextProvider = (props) => {
 
     const { children } = props;
 
-    const [criador, setCriador] = useState('Angelo');
+    const [criador] = useState('Angelo');
 
     const [tasks, setTasks] = useState(
         // Criação de uma array de tarefas
@@ -22,22 +22,29 @@ export const AppContextProvider = (props) => {
         setTasks(estadoAtual => {
             const task = {
                 id: estadoAtual.length + 1,
-                tarefa: nomeTask // aqui o campo deve ser "tarefa" pra manter o mesmo formato do Inicio.jsx
+                tarefa: nomeTask // aqui o campo deve ser "tarefa" pra manter ao mesmo formato do Inicio.jsx
             };
             return [...estadoAtual, task];
         });
     };
 
-    const removerTask = (idTask) =>{
+    const removerTask = (idTask) => {
         setTasks(estadoAtual => {
-            const tarefasFiltradas = estadoAtual.filter(item => item.id !== idTask);
-            return (
-                [
-                ...tarefasFiltradas,
-                ]
-            );
-        })
+            // Filtra a tarefa a ser removida
+            return estadoAtual.filter(item => item.id !== idTask);
+        });
     };
+    
+    const editarTask = (idTask, novaTarefa) => {
+        setTasks(estadoAtual => {
+            return estadoAtual.map(item => 
+                item.id === idTask 
+                    ? { ...item, tarefa: novaTarefa } 
+                    : item
+            );
+        });
+    };
+    
 
     return (
         <AppContext.Provider value={{
@@ -45,6 +52,7 @@ export const AppContextProvider = (props) => {
             tasks,
             adicionarTasks,
             removerTask,
+            editarTask,
         }}>
             {children}
         </AppContext.Provider>
